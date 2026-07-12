@@ -8,7 +8,7 @@ export default function Logo({ size = 56 }) {
   if (ok) {
     return (
       <img
-        src="/qiara-mascot.png"
+        src={`${import.meta.env.BASE_URL}qiara-mascot.png`}
         alt="Qiara Delivery"
         style={{ height: size, width: 'auto' }}
         className="object-contain drop-shadow-[0_6px_20px_rgba(248,197,72,0.35)]"
