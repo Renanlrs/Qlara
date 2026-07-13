@@ -37,7 +37,7 @@ export default function Navbar() {
       >
         {/* Logo */}
         <a href="#home" className="flex items-center gap-3 pl-1">
-          <Logo size={44} />
+          <Logo size={54} />
           <span className="font-heading text-lg font-bold gold-text">Qiara Delivery</span>
         </a>
 

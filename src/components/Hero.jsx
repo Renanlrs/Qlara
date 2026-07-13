@@ -1,7 +1,9 @@
 import { motion } from 'motion/react'
-import { useState } from 'react'
-import { Phone, Play } from 'lucide-react'
+import { ArrowRight, ExternalLink } from 'lucide-react'
+import Logo from './Logo'
 import { HERO_VIDEO, waLink } from '../brand'
+
+const PLANOS_URL = 'https://qlara-link-delivery.lovable.app/planos'
 
 const floatingCards = [
   { emoji: '🍔', big: '+3.200 pedidos', small: 'Hoje', pos: 'top-24 left-4 md:left-10', delay: 0 },
@@ -20,16 +22,6 @@ const fade = {
 }
 
 export default function Hero() {
-  const [phone, setPhone] = useState('')
-
-  const submit = (e) => {
-    e.preventDefault()
-    const msg = phone.trim()
-      ? `Olá! Quero conhecer a Qiara Delivery. Meu WhatsApp: ${phone.trim()}.`
-      : 'Olá! Quero conhecer a Qiara Delivery.'
-    window.open(waLink(msg), '_blank')
-  }
-
   return (
     <section id="home" className="relative flex min-h-screen items-center justify-center overflow-hidden">
       {/* Video background with slow zoom */}
@@ -70,6 +62,16 @@ export default function Hero() {
 
       {/* Content */}
       <div className="relative z-30 mx-auto flex max-w-[650px] flex-col items-center px-6 text-center">
+        <motion.div
+          variants={fade}
+          custom={0}
+          initial="hidden"
+          animate="show"
+          className="mb-5"
+        >
+          <Logo size={160} />
+        </motion.div>
+
         <motion.span
           variants={fade}
           custom={0}
@@ -104,45 +106,34 @@ export default function Hero() {
           com tecnologia, marketing e atendimento inteligente.
         </motion.p>
 
-        {/* CTA glass card */}
-        <motion.form
+        <motion.div
           variants={fade}
           custom={3}
           initial="hidden"
           animate="show"
-          onSubmit={submit}
-          className="glass-strong mt-9 flex w-full max-w-md flex-col gap-2 rounded-2xl p-2 sm:flex-row sm:rounded-full"
+          className="mt-9 flex flex-col items-center gap-3 sm:flex-row"
         >
-          <div className="flex flex-1 items-center gap-2 rounded-full px-4 py-2">
-            <Phone size={18} className="text-gold" />
-            <input
-              value={phone}
-              onChange={(e) => setPhone(e.target.value)}
-              type="tel"
-              placeholder="Digite seu WhatsApp"
-              className="w-full bg-transparent text-white placeholder:text-white/40 focus:outline-none"
-            />
-          </div>
-          <motion.button
-            whileHover={{ scale: 1.03 }}
+          <motion.a
+            whileHover={{ scale: 1.04 }}
             whileTap={{ scale: 0.97 }}
-            type="submit"
-            className="rounded-full bg-gold-grad px-6 py-3 text-sm font-semibold text-ink shadow-gold"
+            href={waLink("Olá! Quero contratar a Q'lara Delivery.")}
+            target="_blank"
+            rel="noopener"
+            className="inline-flex items-center gap-2 rounded-full bg-gold-grad px-8 py-4 text-base font-bold text-ink shadow-gold-lg"
           >
-            Quero vender mais
-          </motion.button>
-        </motion.form>
-
-        <motion.a
-          variants={fade}
-          custom={4}
-          initial="hidden"
-          animate="show"
-          href="#recursos"
-          className="mt-5 inline-flex items-center gap-2 rounded-full border border-white/25 px-6 py-3 text-sm font-medium text-white transition-all hover:border-white hover:bg-white/5"
-        >
-          <Play size={15} /> Ver demonstração
-        </motion.a>
+            Quero contratar <ArrowRight size={18} />
+          </motion.a>
+          <motion.a
+            whileHover={{ scale: 1.04 }}
+            whileTap={{ scale: 0.97 }}
+            href={PLANOS_URL}
+            target="_blank"
+            rel="noopener"
+            className="inline-flex items-center gap-2 rounded-full border border-white/25 px-8 py-4 text-base font-medium text-white transition-all hover:border-white hover:bg-white/5"
+          >
+            Conhecer <ExternalLink size={16} />
+          </motion.a>
+        </motion.div>
       </div>
     </section>
   )
