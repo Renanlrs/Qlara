@@ -1,5 +1,6 @@
 import Navbar from './components/Navbar'
 import Hero from './components/Hero'
+import FoodShowcase from './components/FoodShowcase'
 import Benefits from './components/Benefits'
 import Services from './components/Services'
 import AppPreview from './components/AppPreview'
@@ -12,6 +13,7 @@ export default function App() {
       <Navbar />
       <main>
         <Hero />
+        <FoodShowcase />
         <Benefits />
         <Services />
         <AppPreview />

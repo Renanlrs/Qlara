@@ -91,6 +91,12 @@
   .final p{color:rgba(255,255,255,.85);max-width:540px;margin:0 auto 26px}
   .foot{padding:26px 0 34px;text-align:center;font-size:12.5px;color:rgba(255,255,255,.62)}
   .foot i{color:var(--gold);font-style:normal}
+  .foodrow{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:6px}
+  @media(max-width:560px){.foodrow{grid-template-columns:1fr 1fr}}
+  .fcell{position:relative;aspect-ratio:1;border-radius:16px;overflow:hidden;border:1px solid var(--border);margin:0}
+  .fcell img{width:100%;height:100%;object-fit:cover;transition:.45s}
+  .fcell:hover img{transform:scale(1.08)}
+  .fcell figcaption{position:absolute;left:0;right:0;bottom:0;padding:12px 14px;font-family:'Outfit',sans-serif;font-weight:700;font-size:15px;color:#fff;background:linear-gradient(transparent,rgba(0,0,0,.82))}
 </style>
 
 <nav>
@@ -134,6 +140,19 @@
   </div>
 </section>
 
+<section class="sec wrap">
+  <span class="eyebrow">Cardápio</span>
+  <h2 class="h">De qualquer cozinha, <span class="gold">mais pedidos.</span></h2>
+  <p class="desc">Hambúrguer, pizza, japonês, saudável ou doces — seu cardápio dá água na boca e vende sozinho.</p>
+  <div class="foodrow">
+    <figure class="fcell"><img src="https://renanlrs.github.io/Qlara/food/burger.jpg" alt="Hambúrguer" loading="lazy"><figcaption>Hambúrguer</figcaption></figure>
+    <figure class="fcell"><img src="https://renanlrs.github.io/Qlara/food/pizza.jpg" alt="Pizza" loading="lazy"><figcaption>Pizzaria</figcaption></figure>
+    <figure class="fcell"><img src="https://renanlrs.github.io/Qlara/food/sushi.jpg" alt="Sushi" loading="lazy"><figcaption>Japonês</figcaption></figure>
+    <figure class="fcell"><img src="https://renanlrs.github.io/Qlara/food/bowl.jpg" alt="Saudável" loading="lazy"><figcaption>Saudável</figcaption></figure>
+    <figure class="fcell"><img src="https://renanlrs.github.io/Qlara/food/dessert.jpg" alt="Sobremesas" loading="lazy"><figcaption>Sobremesas</figcaption></figure>
+    <figure class="fcell"><img src="https://renanlrs.github.io/Qlara/food/drink.jpg" alt="Bebidas" loading="lazy"><figcaption>Bebidas</figcaption></figure>
+  </div>
+</section>
 <section class="sec wrap" id="recursos">
   <span class="eyebrow">Gestão completa</span>
   <h2 class="h">Tudo o que o seu restaurante precisa, num lugar só.</h2>

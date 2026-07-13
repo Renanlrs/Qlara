@@ -1,10 +1,12 @@
 import { motion } from 'motion/react'
 import { Search, ShoppingBag, Star, Plus } from 'lucide-react'
 
+const B = import.meta.env.BASE_URL
+
 const dishes = [
-  { name: 'Smash Burger Duplo', price: 'R$ 32,90', tag: '🔥 Mais pedido' },
-  { name: 'Pizza Margherita', price: 'R$ 49,90', tag: '⭐ 4.9' },
-  { name: 'Combo Família', price: 'R$ 89,90', tag: '💰 Oferta' },
+  { name: 'Smash Burger Duplo', price: 'R$ 32,90', tag: '🔥 Mais pedido', img: 'burger.jpg' },
+  { name: 'Pizza Margherita', price: 'R$ 49,90', tag: '⭐ 4.9', img: 'pizza.jpg' },
+  { name: 'Combinado Sushi', price: 'R$ 89,90', tag: '💰 Oferta', img: 'sushi.jpg' },
 ]
 
 export default function AppPreview() {
@@ -76,9 +78,12 @@ export default function AppPreview() {
               <div className="mt-5 space-y-3 px-5">
                 {dishes.map((d) => (
                   <div key={d.name} className="flex items-center gap-3 rounded-2xl bg-white/6 p-3">
-                    <div className="grid h-14 w-14 shrink-0 place-items-center rounded-xl bg-gradient-to-br from-gold/30 to-transparent text-2xl">
-                      🍔
-                    </div>
+                    <img
+                      src={`${B}food/${d.img}`}
+                      alt={d.name}
+                      loading="lazy"
+                      className="h-14 w-14 shrink-0 rounded-xl object-cover"
+                    />
                     <div className="flex-1">
                       <p className="text-sm font-semibold text-white">{d.name}</p>
                       <p className="text-[10px] text-white/50">{d.tag}</p>
