@@ -8,6 +8,7 @@ const links = [
   { label: 'Home', href: '#home' },
   { label: 'Como Funciona', href: '#como-funciona' },
   { label: 'Recursos', href: '#recursos' },
+  { label: 'Plataforma', href: `${import.meta.env.BASE_URL}plataforma.html` },
   { label: 'Planos', href: '#planos' },
   { label: 'Contato', href: '#contato' },
 ]
